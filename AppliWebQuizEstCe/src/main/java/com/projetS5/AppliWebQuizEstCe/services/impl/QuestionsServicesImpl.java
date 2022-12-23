@@ -1,5 +1,7 @@
 package com.projetS5.AppliWebQuizEstCe.services.impl;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +18,17 @@ public class QuestionsServicesImpl implements QuestionsServices {
 	@Autowired
     private QuestionsRepository questionsRepo;
 
-    public Questions getQuestion(final int id) {
+    /*public Questions getQuestion(final int id) {
         return questionsRepo.getQuestion(id);
-    }
+    }*/
 
     public Iterable<Questions> getQuestions() {
         return questionsRepo.getQuestions();
     }
+
+	@Override
+	public Collection<? extends String> getMotCle() {
+		return (Collection<? extends String>) questionsRepo.getMotCles();
+	}
 
 }

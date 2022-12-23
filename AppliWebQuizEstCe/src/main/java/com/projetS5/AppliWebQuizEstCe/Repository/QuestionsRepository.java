@@ -35,8 +35,13 @@ public class QuestionsRepository {
         return response.getBody();
     }
 
-	public Questions getQuestion(int id) {
+	/*public Questions getQuestion(int id) {
 		// TODO Auto-generated method stub
+		return null;
+	}*/
+	
+	public Iterable<String> getMotCles(){
+		//à faire
 		return null;
 	}
 }
