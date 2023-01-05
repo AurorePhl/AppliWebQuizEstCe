@@ -1,7 +1,5 @@
 package com.projetS5.AppliWebQuizEstCe.Controller;
 
-import java.util.ArrayList;
-
 import com.projetS5.AppliWebQuizEstCe.models.Pseudo;
 import com.projetS5.AppliWebQuizEstCe.models.Theme;
 
