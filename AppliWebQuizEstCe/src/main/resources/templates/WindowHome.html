@@ -28,14 +28,14 @@ div.fin{
 <h1>Bienvenue</h1>
 <br>
 </div>
-<form method="put">
+<form action="" method="get">
   <fieldset>
     <legend>Pseudo</legend>
     <input type="text" placeholder="Entrez votre pseudo" />
-    <button> <strong> Valider </strong></button>
+    <button onclick="enregistrer()"> <strong> Valider </strong></button>
   </fieldset>
 </form>
-<form method="post">
+<form action="" method="get">
   <fieldset>
     <legend>Thèmes</legend>
     <div class="choix">
@@ -46,7 +46,7 @@ div.fin{
 </form>
 <br>
 <div class="fin">
-<button> <strong> Commencer la partie</strong></button>
+<button onclick="redirect()"> <strong> Commencer la partie</strong></button>
 </div>
 </body>
 </html>
