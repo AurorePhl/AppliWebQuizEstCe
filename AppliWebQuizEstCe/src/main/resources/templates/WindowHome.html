@@ -16,12 +16,16 @@ img{
 }
 div.haut {
     text-align:center;
+    text-transform: uppercase;
 }
 div.choix{
-    color:grey;
+    color:gray;
 }
 div.fin{
     text-align:right;
+}
+div.liens{
+    text-transform: lowercase;
 }
 </style>
 </head>
@@ -29,10 +33,10 @@ div.fin{
     <div class="haut">
 <img src="https://imagizer.imageshack.com/img923/7952/zyiSU1.png" />
 <br>
-<h1>Bienvenue</h1>
+<h1><font face ="Sans-serif">Bienvenue</font></h1>
 <br>
 </div>
-<form pseudo="form1" action="" method="get">
+<form action="" method="get">
   <fieldset>
     <legend>Pseudo</legend>
     <input type="text" placeholder="Entrez votre pseudo" />
@@ -51,6 +55,11 @@ div.fin{
 <br>
 <div class="fin">
 <button onclick="redirect()"> <strong> Commencer la partie</strong></button>
+</div>
+<div class="liens">
+    <a href="/"><font size="2" color="gray">règles du jeu</font></a>
+    <hr>
+<a href="/"><font size="2" color="gray">à propos de nous</font></a>
 </div>
 </body>
 </html>
