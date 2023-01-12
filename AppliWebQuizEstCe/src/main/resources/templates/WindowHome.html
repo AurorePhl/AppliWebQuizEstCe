@@ -10,27 +10,43 @@ button {
 img{
     width:300px;
 }
+div.haut {
+    text-align:center;
+}
+div.choix{
+    color:grey;
+}
+div.fin{
+    text-align:right;
+}
 </style>
 </head>
 <body>
-<img src="https://imagizer.imageshack.com/img923/7952/zyiSU1.png" /> 
+    <div class="haut">
+<img src="https://imagizer.imageshack.com/img923/7952/zyiSU1.png" />
 <br>
 <h1>Bienvenue</h1>
 <br>
-<form method="post">
+</div>
+<form method="put">
   <fieldset>
     <legend>Pseudo</legend>
-    <input type="text" placeholder="Entre ton pseudo" />
+    <input type="text" placeholder="Entrez votre pseudo" />
     <button> <strong> Valider </strong></button>
   </fieldset>
 </form>
 <form method="post">
   <fieldset>
     <legend>Thèmes</legend>
+    <div class="choix">
+        <p>Sélectionnez un thème</p>
+        </div>
     <label><input type="radio" name="radio">Buteurs Français</label>
   </fieldset>
 </form>
 <br>
-<button> <strong> Commencer </strong></button>
+<div class="fin">
+<button> <strong> Commencer la partie</strong></button>
+</div>
 </body>
 </html>
