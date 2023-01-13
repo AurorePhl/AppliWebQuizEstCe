@@ -1,11 +1,16 @@
 package com.projetS5.AppliWebQuizEstCe.Controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import com.projetS5.AppliWebQuizEstCe.models.MotCles;
 import com.projetS5.AppliWebQuizEstCe.models.Piece;
 import com.projetS5.AppliWebQuizEstCe.models.Questions;
 import com.projetS5.AppliWebQuizEstCe.models.Res;
 import com.projetS5.AppliWebQuizEstCe.models.Theme;
 
+@Controller
 public class GameController {
 
 	Questions questions;
@@ -14,6 +19,28 @@ public class GameController {
 	Piece plateau;
 	Res res;
 	Theme theme;
+	
+	@GetMapping("/WindowQuestion")
+	public void AffichePieceQuestion(Model model) {
+		plateau = new Piece();
+		theme = new Theme();
+		for(int i =0; i<plateau.getIdentitePieces().size();i++) {
+			String id = (String) plateau.getIdentitePieces().get(i);
+			theme.addTheme(id, plateau);
+			model.addAttribute("identite", id);
+		}
+	}
+	
+	@GetMapping("/WindowKeyword")
+	public void AffichePieceKeyword(Model model) {
+		plateau = new Piece();
+		theme = new Theme();
+		for(int i =0; i<plateau.getIdentitePieces().size();i++) {
+			String id = (String) plateau.getIdentitePieces().get(i);
+			theme.addTheme(id, plateau);
+			model.addAttribute("identite", id);
+		}
+	}
 	
 	public void ChoixQuestion() {
 		/* début dans WindowQuestion
