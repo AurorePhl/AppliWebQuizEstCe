@@ -1,32 +1,33 @@
 package com.projetS5.AppliWebQuizEstCe.models;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 
-public class Theme {
+public class Theme<T> {
 	private String currentTheme;
-	private HashMap <String,ArrayList<ButeursFrancais>> themes;
+	private HashMap <String,Piece> themes;
 	
 	public Theme () {
-		themes = new HashMap<String,ArrayList <ButeursFrancais>>();
+		themes = new HashMap<String,Piece>();
 		currentTheme = "";
 	}
-	//Ajout des thèmes avec les questions associées
-	public void addTheme(String theme,ArrayList<ButeursFrancais> Buteurs) {
-		themes.put(theme,ButeursFrancais);
+	
+	//Ajout des thèmes avec leur plateau de jeu associé
+	public void addTheme(String nomTheme,Piece plateauDeJeu) {
+		themes.put(nomTheme,plateauDeJeu);
 		
 	}
-	//Methode pour definir le theme 
-	public void setcurrentTheme(String theme) {
-		currentTheme=theme;
+	//Methode pour definir le theme de la partie en cours
+	public void setcurrentTheme(String nomTheme) {
+		currentTheme=nomTheme;
 	
 	}
-	//Methode pour obtenir le thème actuel
+	//Methode pour obtenir le thème de la partie en cours
 	public String getCurrentTheme() {
 		return currentTheme; 
-		
 	}
-	//obtenir les questions associées au thème actuel
-	 public ArrayList<ButeursFrancais> getButeursFrancaisForCurrentTheme(){
+	
+	//obtenir le plateau de jeu associé au thème actuel
+	 public Piece getButeursFrancaisForCurrentTheme(){
 	        return themes.get(currentTheme);
 	    }
 }
