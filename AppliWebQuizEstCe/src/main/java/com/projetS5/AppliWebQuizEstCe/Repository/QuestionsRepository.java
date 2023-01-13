@@ -1,5 +1,7 @@
 package com.projetS5.AppliWebQuizEstCe.Repository;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -15,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 public class QuestionsRepository {
+	
 	@Autowired
     private CustomProperties props;
 
@@ -29,19 +32,32 @@ public class QuestionsRepository {
                 null,
                 new ParameterizedTypeReference<Iterable<Questions>>() {}
                 );
-
-       //log.debug("Get Questions call " + response.getStatusCode().toString());
-        
         return response.getBody();
     }
 
-	/*public Questions getQuestion(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
+	public Questions getQuestion(int id) {
+		String baseApiUrl = (String) props.getApiUrl();
+        String getQuestionUrl = baseApiUrl + "/questions/" + id;
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Questions> response = restTemplate.exchange(
+                getQuestionUrl,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<Questions>() {}
+                );
+		return response.getBody();
+	}
 	
-	public Iterable<String> getMotCles(){
-		//à faire
-		return null;
+	public Collection<? extends String> getMotCles(){
+		String baseApiUrl = (String) props.getApiUrl();
+        String getmcUrl = baseApiUrl + "/questions/mc";
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Collection<? extends String>> response = restTemplate.exchange(
+                getmcUrl,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<Collection<? extends String>>() {}
+                );
+		return response.getBody();
 	}
 }

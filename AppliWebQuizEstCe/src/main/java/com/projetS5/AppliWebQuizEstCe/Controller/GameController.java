@@ -3,7 +3,7 @@ package com.projetS5.AppliWebQuizEstCe.Controller;
 import com.projetS5.AppliWebQuizEstCe.models.MotCles;
 import com.projetS5.AppliWebQuizEstCe.models.Piece;
 import com.projetS5.AppliWebQuizEstCe.models.Questions;
-import com.projetS5.AppliWebQuizEstCe.models.Reponse;
+import com.projetS5.AppliWebQuizEstCe.models.Res;
 import com.projetS5.AppliWebQuizEstCe.models.Theme;
 
 public class GameController {
@@ -12,7 +12,7 @@ public class GameController {
 	String questionChoisie;
 	MotCles motCleChoisi;
 	Piece plateau;
-	Reponse res;
+	Res res;
 	Theme theme;
 	
 	public void ChoixQuestion() {
