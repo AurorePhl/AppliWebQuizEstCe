@@ -10,6 +10,7 @@ public class MotCles {
 	private Map<String,Integer> motCle; 
 	private TreeSet<String> stockMotCles;
 	private QuestionsServices questions;
+	private String motCleChoisi;
 	
 	public MotCles() {
 		stockMotCles = new TreeSet<String>();
@@ -20,7 +21,41 @@ public class MotCles {
 			motCle.put(copy.first(), 0);
 			copy.remove(copy.first());
 		}
+		motCleChoisi = null;
 	}
+
+	public Map<String, Integer> getMotCle() {
+		return motCle;
+	}
+
+	public void setMotCle(Map<String, Integer> motCle) {
+		this.motCle = motCle;
+	}
+
+	public TreeSet<String> getStockMotCles() {
+		return stockMotCles;
+	}
+
+	public void setStockMotCles(TreeSet<String> stockMotCles) {
+		this.stockMotCles = stockMotCles;
+	}
+
+	public QuestionsServices getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(QuestionsServices questions) {
+		this.questions = questions;
+	}
+
+	public String getMotCleChoisi() {
+		return motCleChoisi;
+	}
+
+	public void setMotCleChoisi(String motCleChoisi) {
+		this.motCleChoisi = motCleChoisi;
+	}
+	
 	
 	
 }

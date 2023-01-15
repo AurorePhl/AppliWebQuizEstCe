@@ -1,5 +1,8 @@
 package com.projetS5.AppliWebQuizEstCe.Controller;
 
+import java.util.LinkedList;
+import java.util.TreeSet;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,37 +12,45 @@ import com.projetS5.AppliWebQuizEstCe.models.Piece;
 import com.projetS5.AppliWebQuizEstCe.models.Questions;
 import com.projetS5.AppliWebQuizEstCe.models.Res;
 import com.projetS5.AppliWebQuizEstCe.models.Theme;
+import com.projetS5.AppliWebQuizEstCe.services.QuestionsServices;
 
 @Controller
 public class GameController {
 
-	Questions questions;
+	Questions question;
+	LinkedList<Questions> questions;
+	QuestionsServices qServ;
 	String questionChoisie;
 	MotCles motCleChoisi;
 	Piece plateau;
 	Res res;
 	Theme theme;
 	
-	@GetMapping("/WindowQuestion")
-	public void AffichePieceQuestion(Model model) {
-		plateau = new Piece();
-		theme = new Theme();
-		for(int i =0; i<plateau.getIdentitePieces().size();i++) {
-			String id = (String) plateau.getIdentitePieces().get(i);
-			theme.addTheme(id, plateau);
-			model.addAttribute("identite", id);
+	@GetMapping("/")
+	public String AfficheQuestion(Model model) {
+		questions = (LinkedList<Questions>) qServ.getQuestions();
+		LinkedList<Questions> qMc = new LinkedList<Questions>();
+		int taille = questions.size();
+		for(int i =0; i<taille;i++) {
+			if(questions.get(i).getMotCle().equals(motCleChoisi.getMotCleChoisi()))
+				qMc.add(questions.get(i));
 		}
+		for(int i =0; i<qMc.size();i++) {
+			model.addAttribute("question", qMc.get(i));
+		}
+		return "WindowKeyword";
 	}
 	
-	@GetMapping("/WindowKeyword")
-	public void AffichePieceKeyword(Model model) {
-		plateau = new Piece();
-		theme = new Theme();
-		for(int i =0; i<plateau.getIdentitePieces().size();i++) {
-			String id = (String) plateau.getIdentitePieces().get(i);
-			theme.addTheme(id, plateau);
-			model.addAttribute("identite", id);
+	@GetMapping("/")
+	public String AfficheKeyword(Model model) {
+		motCleChoisi = new MotCles();
+		TreeSet<String> mc = (TreeSet<String>) motCleChoisi.getStockMotCles().clone();
+		int taille = mc.size();
+		for(int i =0; i<taille;i++) {
+			model.addAttribute("keyword", mc.first());
+			mc.remove(mc.first());
 		}
+		return "WindowQuestion";
 	}
 	
 	public void ChoixQuestion() {
@@ -67,12 +78,19 @@ public class GameController {
 		 * -> Victory() */
 	}
 	
-	public void Victory() {
-		/* Si pieceChoisie identique à pieceGagnante 
-		 * -> redirect vers WindowVictory 
+	@GetMapping("/")
+	public String Victory(Model model) {
+		/* Après ChoixPiece() 
+		 * Si pieceChoisie identique à pieceGagnante 
+		 * -> affichage
 		 * -> le joueur clique sur "suivant" 
-		 * -> redirection vers page d'accueil
-		 * Sinon 
-		 * -> pieceChoisie : piece grisée (value replace à 1 dans nomPieces correspondant) */
+		 * -> redirection vers page d'accueil */
+		if(plateau.getPieceChoisie().equals(plateau.getPieceGagnante())) {
+			model.addAttribute("victory", "Victoire");
+		}
+		else {
+			model.addAttribute("victory", "Perdu");
+		}
+		return "WindowHome";
 	}
 }

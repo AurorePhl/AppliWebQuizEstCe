@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Buteurs Francais</title>
@@ -91,6 +91,28 @@ img{
                 </tr>
                 
         </table>
-<button></button>
+<br>
+<div class="keyword">
+<table align="center"></table>
+<form method="get">
+  <fieldset>
+    <legend>Sélectionnez un mot-clé</legend>
+    <table>
+            <tbody>
+                <tr th:if="${keyword.empty}">
+                    <td colspan="3">Aucun joueur en base de données</td>
+                </tr>
+                <tr th:each="id: keyword">
+                
+                    <td>
+                    <button onClick="href:WindowQuestion.html"><h5><span th:text="${keyword}"></span></h5></button>
+                    </td>
+               
+                </tr>
+            </tbody>
+        </table>
+  </fieldset>
+</form>
+</div>
 </body>
 </html>

@@ -30,4 +30,17 @@ public class Theme<T> {
 	 public Piece getButeursFrancaisForCurrentTheme(){
 	        return themes.get(currentTheme);
 	    }
+
+	public HashMap<String, Piece> getThemes() {
+		return themes;
+	}
+
+	public void setThemes(HashMap<String, Piece> themes) {
+		this.themes = themes;
+	}
+
+	public void setCurrentTheme(String currentTheme) {
+		this.currentTheme = currentTheme;
+	}
+	 
 }

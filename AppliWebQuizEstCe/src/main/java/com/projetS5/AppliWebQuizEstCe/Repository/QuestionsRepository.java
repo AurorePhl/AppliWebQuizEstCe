@@ -1,6 +1,7 @@
 package com.projetS5.AppliWebQuizEstCe.Repository;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -21,16 +22,16 @@ public class QuestionsRepository {
 	@Autowired
     private CustomProperties props;
 
-    public Iterable<Questions> getQuestions() {
+    public List<Questions> getQuestions() {
         String baseApiUrl = (String) props.getApiUrl();
         String getQuestionsUrl = baseApiUrl + "/questions";
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Iterable<Questions>> response = restTemplate.exchange(
+        ResponseEntity<List<Questions>> response = restTemplate.exchange(
                 getQuestionsUrl,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<Iterable<Questions>>() {}
+                new ParameterizedTypeReference<List<Questions>>() {}
                 );
         return response.getBody();
     }
