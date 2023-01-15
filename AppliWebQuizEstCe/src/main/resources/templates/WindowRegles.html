@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Quiz est-ce ?</title>
+<style>
+img{
+width:150px;
+}
+body{
+    background:black;
+    color:white;
+}
+div.haut {
+    text-align:center;
+    text-transform: uppercase;
+}
+div.txt {
+text-align: justify;
+}
+</style>
+</head>
+<body>
+<button style="background-color:black ; border-color:black" ><img src="https://imagizer.imageshack.com/img923/7952/zyiSU1.png" /></button>
+<div class="haut">
+<h1><font face ="Sans-serif">Règles du jeu</font></h1>
+</div>
+<div class="txt">
+<h3><font face ="Sans-serif">Mise en place du jeu</font></h3>
+<p>
+Après que l’utilisateur ait choisi son pseudo et sélectionné le thème de son choix, 
+il clique sur le bouton "commencer la partie". Un plateau de jeu lui est alors présenté via l’interface du jeu. 
+Le plateau de jeu contient les 24 pièces du thème choisi. En plus de cela, il est 
+présenté au joueur, en bas du plateau de jeu, plusieurs boutons sur lesquels 
+sont écrits des mots-clés relatifs au thème choisi. 
+<br>
+Après l’affichage de l’interface du jeu, la machine choisie aléatoirement et de 
+façon automatique l’une des pièces présentes sur le plateau de jeu du thème.
+Le but de l’utilisateur est de deviner la pièce choisie par la machine parmi les autres. 
+Le joueur ne sait donc pas quelle pièce est choisie par la machine avant la fin de 
+la partie de jeu.
+</p>
+<h3><font face ="Sans-serif">Déroulement d’une partie de jeu</font></h3>
+<p>
+La partie commence dès que le joueur clique sur l’un des premiers mots-clés 
+qui lui sont présentés. Suite à cela, d’autres boutons remplacent ceux contenant 
+des mots-clés. Ces nouveaux boutons contiennent plusieurs questions, relatives 
+au mot-clé choisi précédemment, que le joueur peut poser à la machine. Le joueur 
+clique sur l’un d’eux, ce qui a pour conséquence de griser certaines pièces du 
+plateau de jeu. Si la réponse à la question posée par le joueur est “oui”, toutes 
+les pièces du plateau de jeu non grisées qui ne sont pas concernées par 
+l’affirmation positive de la question sont grisées. A l’inverse, si la réponse à 
+la question posée par le joueur est “non”, toutes les pièces du plateau de jeu non 
+grisées qui sont concernées par l’affirmation positive de la question sont grisées. 
+Ensuite, des boutons contenant des mots-clés sont de nouveau présentés au joueur. 
+Ce dernier en choisit un et tout se déroule comme précédemment jusqu'à ce que le 
+joueur sélectionne l'une des pièce du plateau de jeu.
+</p>
+<h3><font face ="Sans-serif">Fin de partie</font></h3>
+<p>
+La partie prend fin quand l’utilisateur clique sur l’une des pièces du plateau 
+de jeu. Cela a pour conséquence de considérer la pièce que le joueur a sélectionné 
+comme la pièce du plateau de jeu qu’il pense que la machine a choisie en début de 
+partie. Le joueur gagne donc la partie de jeu s’il sélectionne la pièce gagnante 
+et il perd la partie s’il sélectionne n’importe quelle autre pièce du plateau de 
+jeu excepté la pièce gagnante.
+</p>
+</div>
+</body>
+</html>
