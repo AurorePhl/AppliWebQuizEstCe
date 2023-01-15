@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.projetS5.AppliWebQuizEstCe.models.MotCles;
 import com.projetS5.AppliWebQuizEstCe.models.Piece;
 import com.projetS5.AppliWebQuizEstCe.models.Questions;
+import com.projetS5.AppliWebQuizEstCe.models.QuestionsPosees;
 import com.projetS5.AppliWebQuizEstCe.models.Res;
 import com.projetS5.AppliWebQuizEstCe.models.Theme;
 import com.projetS5.AppliWebQuizEstCe.services.QuestionsServices;
@@ -18,14 +19,15 @@ import com.projetS5.AppliWebQuizEstCe.services.QuestionsServices;
 @Controller
 public class GameController {
 
-	Questions question;
-	LinkedList<Questions> questions;
-	QuestionsServices qServ;
-	String questionChoisie;
-	MotCles motCleChoisi;
-	Piece plateau;
-	Res res;
-	Theme theme;
+	private Questions question;
+	private LinkedList<Questions> questions;
+	private QuestionsServices qServ;
+	private String questionChoisie;
+	private MotCles motCleChoisi;
+	private Piece plateau;
+	private Res res;
+	private Theme theme;
+	QuestionsPosees questionP;
 	
 	@GetMapping("/")
 	public String AfficheQuestion(Model model) {
@@ -53,20 +55,27 @@ public class GameController {
 		}
 		return "WindowQuestion";
 	}
+	
 	// Affichage des questions restantes 
-	   		private GameModel model;
-	   		private GameView view;
-
-	    	public GameController(GameModel model, GameView view) {
-	        	this.model = model;
-	        	this.view = view;
-	    }
-
-	    	public void showRemainingQuestions() {
-	        	List<Questions> remainingQuestions = model.getRemainingQuestions();
+	/*public void showRemainingQuestions() {
+	        	List<Questions> remainingQuestions = questionP.getRemainingQuestions();
 	        	view.displayRemainingQuestions(remainingQuestions);
 	    }
 
+	 public void handleQuestionSelection() {
+	        List<Questions> questions = qServ.getQuestions();
+	        view.displayQuestions(questions);
+	        int selectedQuestionIndex = view.getSelectedQuestionIndex();
+	        QuestionsPosees.selectedQuestion = questions.get(selectedQuestionIndex);
+	        questionP.setCurrentQuestion(selectedQuestion.getQuestion());
+	        view.displayCurrentQuestion(selectedQuestion);
+
+	        // Partie pour griser les pièces concernées 
+	        List<Piece> pieces = plateau.getPieces();
+	        List<Piece> grayedOutPieces = plateau.getPiecesBasedOnAnswer(selectedQuestion.getAnswer());
+	        view.grayOutPieces(grayedOutPieces);
+	    }*/
+	 
 	public void ChoixQuestion() {
 		/* début dans WindowQuestion
 		 * Choix question (clique sur bouton) 
