@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Question { 
+
+    private HashMap<String, ArrayList<Question>> questions; 
+    private int currentQuestionIndex; 
+    private String currentTheme; 
+
+    public Question() { 
+    questions = new HashMap<String, ArrayList<Question>>(); 
+    currentQuestionIndex = 0; 
+    currentTheme = ""; 
+    } 
+
+    public void addQuestion(String theme, Question question) { 
+    if (!questions.containsKey(theme)) 
+            questions.put(theme, newArrayList <Question>()); 
+    questions.get(theme).add(question);
+     } 
+
+    public void setCurrentTheme(String theme) {
+     currentTheme = theme;
+     currentQuestionIndex = 0;
+     }
+    public ArrayList<Question> getQuestions(){ 
+        return questions.get(currentTheme);
+     }
+
+    public Question getCurrentQuestion() { 
+        return questions.get(currentTheme).get(currentQuestionIndex); 
+    } 
+    public boolean checkAnswer(String answer) { 
+        return answer.equalsIgnoreCase(questions.get(currentTheme).get(currentQuestionIndex).getAnswer());
+    }
+
+    private String getAnswer() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+}
