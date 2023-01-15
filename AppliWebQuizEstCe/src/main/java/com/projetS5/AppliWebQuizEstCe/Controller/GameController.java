@@ -52,7 +52,22 @@ public class GameController {
 		}
 		return "WindowQuestion";
 	}
-	
+	// Affichage des questions restantes 
+		public class GameController{
+	   		private GameModel model;
+	   		private GameView view;
+
+	    	public GameController(GameModel model, GameView view) {
+	        	this.model = model;
+	        	this.view = view;
+	    }
+
+	    	public void showRemainingQuestions() {
+	        	List<Question> remainingQuestions = model.getRemainingQuestions();
+	        	view.displayRemainingQuestions(remainingQuestions);
+	    }
+	}
+
 	public void ChoixQuestion() {
 		/* début dans WindowQuestion
 		 * Choix question (clique sur bouton) 
