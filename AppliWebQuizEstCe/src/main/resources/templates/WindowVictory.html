@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Quiz est-ce ?</title>
@@ -16,8 +16,12 @@ body{
 </head>
 <body>
 <div class="title">
-<h1><font face ="Sans-serif">Res</font></h1>
-
+<h1><font face ="Sans-serif">Résultat</font></h1>
+<form method="get">
+  <fieldset>
+<h3 th:each="id: ${victory}"><font face ="Sans-serif"><span th:text="${victory}"></span></font></h3>
+</fieldset>
+</form>
 <a href="WindowHome" class="button" align="center">Suivant</a>
 </div>
 </body>

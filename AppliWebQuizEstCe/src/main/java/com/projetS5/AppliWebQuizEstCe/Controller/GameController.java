@@ -1,6 +1,7 @@
 package com.projetS5.AppliWebQuizEstCe.Controller;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.TreeSet;
 
 import org.springframework.stereotype.Controller;
@@ -53,7 +54,6 @@ public class GameController {
 		return "WindowQuestion";
 	}
 	// Affichage des questions restantes 
-		public class GameController{
 	   		private GameModel model;
 	   		private GameView view;
 
@@ -63,10 +63,9 @@ public class GameController {
 	    }
 
 	    	public void showRemainingQuestions() {
-	        	List<Question> remainingQuestions = model.getRemainingQuestions();
+	        	List<Questions> remainingQuestions = model.getRemainingQuestions();
 	        	view.displayRemainingQuestions(remainingQuestions);
 	    }
-	}
 
 	public void ChoixQuestion() {
 		/* début dans WindowQuestion
