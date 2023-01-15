@@ -4,15 +4,21 @@
 <meta charset="ISO-8859-1">
 <title>Buteurs Francais</title>
 <style>
+table{
+text-align: center;
+vertical-align:top;
+}
+button{
+background-color:black;
+border-color:black;
+color:white;
+}
 body{
     background:black;
     color:white;
 }
 img{
-    height:200px;
-}
-div.plateau{
-    
+    height:150px;
 }
 div.questions{
     
@@ -20,27 +26,77 @@ div.questions{
 </style>
 </head>
 <body>
-    <div class="plateau">
-    <form method="get">
-        <legend>Buteurs français</legend>
-        <table>
+        <table align="center">
+        <tr><td colspan="10" align="center">Buteurs Français</td></tr>
             <tr>
-                <td><button><h5>Thierry Henry</h5><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Thierry_Henry_MLS_All_Star_2013.jpg"
-                title="Thierry Henry" /></button></td>
-                <td></td>
-            </tr>
-        </table>
-        </form>
-        </div>
-        <table>
-            <tbody>
-                <tr th:if="${identite.empty}">
-                    <td colspan="3">Aucun joueur en base de données</td>
+                <td>
+                <button><h5>Eugène Maës</h5><img src="https://france3-regions.francetvinfo.fr/image/QrGSpvDMRrVCtWm3Xra0PXllUrs/930x1274/regions/2020/06/08/5ede8fe1bcde8_eugenemaesok540_1.jpg"
+                title="Eugène Maës" /></button>
+                <button><h5>David Trezeguet</h5><img src="https://img.sport.gentside.com/article/trezeguet/david-trezeguet_25c2d89ca2e081f1cef3fc6d0f7c46175680ddf2.jpg"
+                title="David Trezeguet" /></button>
+                <button><h5>Jean Nicolas</h5><img src="https://medias.lequipe.fr/img-photo-jpg/nicolas-jean/1500000000951886/110:25,1770:1685-315-315-70/8dfe1.jpg"
+                title="Jean Nicolas" /></button>
+                <button><h5>Raymond Kopa</h5><img src="https://www.futbolsapiens.com/wp-content/uploads/2017/03/raymond-kopa-3.jpg"
+                title="Raymond Kopa" /></button>
+                <button><h5>Olivier Giroud</h5><img src="https://th.bing.com/th/id/OIP.__C75B4YbBRkNLIqpIFqTwHaKt?pid=ImgDet&rs=1"
+                title="Olivier Giroud" /></button>
+                <button><h5>Michel Platini</h5><img src="https://th.bing.com/th/id/R.df7c47c9a373abd817ff00932a6672b5?rik=dq22xypuKNTOSg&pid=ImgRaw&r=0"
+                title="Michel Platini" /></button>
+                </td>
                 </tr>
-                <tr th:each="id: ${identite}">
-                    <td><button><h5><span th:text="${identite}"></span></h5></button></td>
+                <tr>
+                <td>
+                <button><h5>Franck Ribéry</h5><img src=""
+                title="Franck Ribéry" /></button>
+                <button><h5>Roger Piantoni</h5><img src=""
+                title="Roger Piantoni" /></button>
+                <button><h5>Laurent Blanc</h5><img src=""
+                title="Laurent Blanc" /></button>
+                <button><h5>Just Fontaine</h5><img src=""
+                title="Just Fontaine" /></button>
+                </td>
                 </tr>
-            </tbody>
+                <tr>
+                <td>
+                <button><h5>Sylvain Wiltord</h5><img src=""
+                title="Sylvain Wiltord" /></button>
+                <button><h5>Youri DjorkKaeff</h5><img src=""
+                title="Youri DjorkKaeff" /></button>
+                <button><h5>Jean Baratte</h5><img src=""
+                title="Jean Baratte" /></button>
+                <button><h5>Hervé Revelli</h5><img src=""
+                title="Hervé Revelli" /></button>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <button><h5>Paul Nicolas</h5><img src=""
+                title="Paul Nicolas" /></button>
+                <button><h5>Karim Benzema</h5><img src=""
+                title="Karim Benzema" /></button>
+                <button><h5>Jean Vincent</h5><img src=""
+                title="Jean Vincent" /></button>
+                <button><h5>Kylian Mbappé</h5><img src=""
+                title="Kylian Mbappé" /></button>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <button><h5>Jean-Pierre Papin</h5><img src=""
+                title="Jean-Pierre Papin" /></button>
+                <button><h5>Zinédine Zidane</h5><img src=""
+                title="Zinédine Zidane" /></button>
+                <button><h5>Dominique Rocheteau</h5><img src=""
+                title="Dominique Rocheteau" /></button>
+                <button><h5>Thierry Henry</h5><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Thierry_Henry_MLS_All_Star_2013.jpg"
+                title="Thierry Henry" /></button>
+                <button><h5>Eric Cantona</h5><img src=""
+                title="Eric Cantona" /></button>
+                <button><h5>Antoine Griezmann</h5><img src=""
+                title="Antoine Griezmann" /></button>
+                </td>
+                </tr>
+                
         </table>
 <div class="questions">
 <form method="get">
